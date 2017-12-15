@@ -73,13 +73,7 @@ module.exports = class Authentication extends Plugin {
           modules.forEach(Module => {
             // TODO test ability to return multiple modules from an authenticator
             const config = merge({}, Module.defaults(), authenticators[name]); // apply the authenticator defaults
-            const module = new Module(
-              name,
-              config,
-              this.database,
-              this.deps,
-              this.events,
-            );
+            const module = new Module(name, config, this.deps, this.character);
             // TODO do authenticator modules have root middleware as well? (pre- and post-router middleware)
             this.router.use(`/${name}`, module.router);
           }),
