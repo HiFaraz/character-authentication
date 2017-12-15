@@ -16,7 +16,7 @@ import session from 'express-session';
  *
  * @param {Object} config
  * @param {Object} db Sequelize database connection
- * @param {Object} [store] Store for `koa-generic-sessions`. Uses the database if a store is not provided
+ * @param {Object} [store] Store for `express-session`. Uses the database if a store is not provided
  * @return {Object}
  */
 function setup(config, db, store) {
@@ -40,6 +40,8 @@ function setup(config, db, store) {
       saveUninitialized: false,
       secret: _config.session.keys.split(','),
       store: _store,
+      // proxy is left as the default, `undefined`, which means we use the
+      // proxy setting from express itself
     }),
     sessionMethods: function(req, res, next) {
       // attach session methods
