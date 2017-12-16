@@ -55,7 +55,7 @@ module.exports = class Authentication extends Plugin {
     // add session-middleware
     const { session, sessionMethods } = sessions.setup(
       this.config,
-      this.database.connection,
+      this.character.database.connection,
       this.deps.sessionStore,
     );
     this.preRouterMiddleware.push(sessionMethods); // adds `req.character.get/set` for safe access of Character session data
