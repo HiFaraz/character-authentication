@@ -6,7 +6,7 @@
 
 const assert = require('assert');
 const { noop } = require('lodash');
-const requests = require('./requests');
+const requests = require('../lib/requests');
 
 describe('requests', () => {
   describe('extend', () => {
