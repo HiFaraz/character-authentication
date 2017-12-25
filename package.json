@@ -35,7 +35,7 @@
     "lodash": "^4.17.4"
   },
   "peerDependencies": {
-    "character": "^0.0.0",
+    "character": "^1.0.0-alpha",
     "connect-session-sequelize": "^5.0.0"
   }
 }
